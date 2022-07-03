@@ -42,7 +42,7 @@ jobs:
         uses: docker/build-push-action@v3
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
+          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME_SERVER }}
           IMAGE_TAG: ${{ steps.vars.outputs.tag }}
         with:
           context: .
@@ -60,7 +60,7 @@ jobs:
         uses: aws-actions/amazon-ecs-render-task-definition@v1
         env:
           ECR_REGISTRY: ${{ steps.login-ecr.outputs.registry }}
-          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME }}
+          ECR_REPOSITORY: ${{ secrets.ECR_REPOSITORY_NAME_SERVER }}
           IMAGE_TAG: ${{ steps.vars.outputs.tag }}
         with:
           task-definition: task-definition.json
@@ -71,6 +71,6 @@ jobs:
         uses: aws-actions/amazon-ecs-deploy-task-definition@v1
         with:
           task-definition: ${{ steps.task-def.outputs.task-definition }}
-          service: ${{ secrets.ECS_SERVICE }}
+          service: ${{ secrets.ECS_SERVICE_SERVER }}
           cluster: ${{ secrets.ECS_CLUSTER }}
           wait-for-service-stability: true
