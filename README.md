@@ -1,5 +1,24 @@
 # Composer Server
 
+## Stacks
+
+- Spring boot
+- JPA
+
+## 설치 방법
+
+OS X & 리눅스:
+
+```sh
+yarn
+```
+
+윈도우:
+
+```sh
+yarn
+```
+
 ## 사용 예제
 
 _더 많은 예제와 사용법은 [Wiki][wiki]를 참고하세요._
