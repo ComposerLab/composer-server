@@ -5,20 +5,7 @@
 
 - Spring boot
 - JPA
-
-## 설치 방법
-
-OS X & 리눅스:
-
-```sh
-yarn
-```
-
-윈도우:
-
-```sh
-yarn
-```
+- Gradle
 
 ## 사용 예제
 
